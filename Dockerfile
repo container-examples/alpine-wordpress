@@ -1,10 +1,9 @@
 FROM alpine:3.7
 
-LABEL MAINTAINER="Aurelien PERRIER <perrie_a@etna-alternance.net>"
+LABEL MAINTAINER="Aurelien PERRIER <a.perrier89@gmail.com>"
 LABEL APP="wordpress"
 LABEL APP_VERSION="4.9.1"
 LABEL APP_REPOSITORY="https://github.com/WordPress/WordPress/releases"
-LABEL APP_DESCRIPTION="app"
 
 ENV TIMEZONE Europe/Paris
 ENV VERSION_WORDPRESS 4.9.1
