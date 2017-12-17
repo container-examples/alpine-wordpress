@@ -2,12 +2,12 @@ FROM alpine:3.7
 
 LABEL MAINTAINER="Aurelien PERRIER <perrie_a@etna-alternance.net>"
 LABEL APP="wordpress"
-LABEL APP_VERSION="4.9"
+LABEL APP_VERSION="4.9.1"
 LABEL APP_REPOSITORY="https://github.com/WordPress/WordPress/releases"
 LABEL APP_DESCRIPTION="app"
 
 ENV TIMEZONE Europe/Paris
-ENV VERSION_WORDPRESS 4.9
+ENV VERSION_WORDPRESS 4.9.1
 ENV APACHE_SERVER_NAME example.com
 ENV MYSQL_DATABASE app
 ENV MYSQL_USER app
