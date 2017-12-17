@@ -1,0 +1,46 @@
+version: '3'
+
+services:
+  mysql:
+    image: perriea/alpine-mysql:3.7
+    hostname: mysql
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 1
+        window: 120s
+      resources:
+        limits:
+          cpus: '10.000'
+          memory: 512M
+    volumes:
+      - db_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+  httpd:
+    image: perriea/alpine-wordpress:3.7
+    build: ./
+    hostname: httpd
+    depends_on:
+      - mysql
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 1
+        window: 120s
+      resources:
+        limits:
+          cpus: '10.000'
+          memory: 256M
+    volumes:
+      - wordpress_data:/var/www/localhost/htdocs
+    ports:
+      - "80:80"
+
+volumes:
+  db_data: {}
+  wordpress_data: {}
