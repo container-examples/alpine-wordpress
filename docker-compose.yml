@@ -21,8 +21,7 @@ services:
       - "3306:3306"
 
   httpd:
-    image: perriea/alpine-wordpress:3.7
-    build: ./
+    image: quay.io/perriea/alpine-wordpress:1.0
     hostname: httpd
     depends_on:
       - mysql
